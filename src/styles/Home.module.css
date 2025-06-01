@@ -1,0 +1,64 @@
+.home_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;  
+}
+
+.content_box { 
+    background-position: center; 
+    background-image: url('../../public/images/Marco-Bienvenido.png');
+    padding: 40px;
+    text-align: center;  
+    width: 650px;  
+    border-radius: 20px;
+}
+   
+.logo {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 90px;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color:#041327;
+    font-style: italic;
+}
+
+.highlight {
+    color: #000; /* O el color exacto del logo */
+}
+
+.subtitle {
+    font-size: xx-large;
+    color: #041327;   
+    font-style: italic;
+
+}
+.btn_container {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 20px; /* Espacio entre los botones */
+}
+/* Botón transparente con texto azul oscuro y borde azul claro */
+.btn {
+    background: transparent;
+    color: #0d2c54; /* Azul oscuro */
+    padding: 10px 20px;
+    border: 2px solid #0099dd; /* Azul claro */
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    background: #0099dd;
+    color: white;
+}

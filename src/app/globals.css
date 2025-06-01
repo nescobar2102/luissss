@@ -1,0 +1,73 @@
+ 
+ 
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+ 
+.custom-input .MuiInputBase-input {
+     border: 2px solid #2196f3; /* azul foco */
+  padding: 15px;
+  border-radius: 25px; 
+  
+  font-size: 16px;
+  color: #000;
+}
+
+/* Opcional: elimina el borde por defecto si es necesario */
+.custom-input .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+/* Cambiar el color del label al enfocar */
+.custom-input label.Mui-focused {
+  color: #2196f3; /* azul MUI (puedes cambiarlo) */
+}
+
+/* Cambiar el borde del input al enfocar */
+.custom-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #2196f3;
+}
+
+.custom-select .MuiSelect-select {
+  padding: 15px;
+  border-radius: 25px;
+  border: 2px solid #2196f3; /* azul foco */
+  font-size: 16px;
+  color: #000;
+}
+
+/* Opcional: quitar bordes */
+.custom-select .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+/* Color del label al enfocar */
+.custom-select label.Mui-focused {
+     border-radius: 25px; /* para mantener la forma */
+  color: #2196f3;
+}
+
+
+/* Borde al hacer focus */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 2px solid #2196f3; /* azul foco */
+  border-radius: 25px; /* para mantener la forma */
+}
+
+/* Fondo más claro al focus (opcional) */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiSelect-select {
+  background: rgba(255, 255, 255, 1); /* más blanco al enfocar */
+}
+
+ 
+/* Asegúrate de mantener el input visual limpio */
+.custom-select .MuiSelect-select:focus {
+  outline: none !important; /* fuerza que no aparezca el 'outline' por defecto */
+}

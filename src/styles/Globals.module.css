@@ -1,0 +1,141 @@
+ 
+.body {
+    background-image: url('../../public/images/Fondo-Sistema-Sandbox.png'), url('../../public/images/Decoración-Fondo.png');
+    background-position: center top, center bottom;
+    background-size: cover, 100% auto;
+    background-repeat: no-repeat, no-repeat;
+    background-blend-mode: screen; /* Puedes probar overlay, multiply, etc. */
+    background-color:transparent;
+}
+
+/* Header */
+.header {
+    background: rgba(0, 0, 50, 0.8);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header img {
+    height: 40px;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 50, 0.8);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+ 
+.custom-input .MuiInputBase-input {
+     border: 2px solid #0099dd; /* azul foco */
+  padding: 15px;
+  border-radius: 25px; 
+  
+  font-size: 16px;
+  color: #000;
+}
+
+/* Opcional: elimina el borde por defecto si es necesario */
+.custom-input .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+/* Cambiar el color del label al enfocar */
+.custom-input label.Mui-focused {
+  color: #0099dd; /* azul MUI (puedes cambiarlo) */
+}
+
+/* Cambiar el borde del input al enfocar */
+.custom-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #0099dd;
+}
+
+.custom-select .MuiSelect-select {
+  padding: 15px;
+  border-radius: 25px;
+  border: 2px solid #0099dd; /* azul foco */
+  font-size: 16px;
+  color: #000;
+}
+
+/* Opcional: quitar bordes */
+.custom-select .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+/* Color del label al enfocar */
+.custom-select label.Mui-focused {
+     border-radius: 25px; /* para mantener la forma */
+  color: #0099dd;
+}
+
+
+/* Borde al hacer focus */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 2px solid #0099dd; /* azul foco */
+  border-radius: 25px; /* para mantener la forma */
+}
+
+/* Fondo más claro al focus (opcional) */
+.custom-select .MuiOutlinedInput-root.Mui-focused .MuiSelect-select {
+  background: rgba(255, 255, 255, 1); /* más blanco al enfocar */
+}
+
+ 
+/* Asegúrate de mantener el input visual limpio */
+.custom-select .MuiSelect-select:focus {
+  outline: none !important; /* fuerza que no aparezca el 'outline' por defecto */
+}
+ 
+.btn_container {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 20px; /* Espacio entre los botones */
+}
+/* Botón transparente con texto azul oscuro y borde azul claro */
+.btn {
+    background: transparent;
+    color: #0d2c54; /* Azul oscuro */
+    padding: 10px 20px;
+    border: 2px solid #0099dd; /* Azul claro */
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 20px;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    background: #0099dd;
+    color: white;
+}
