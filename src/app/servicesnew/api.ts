@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 const API_BASE = 'http://localhost:8000/api/users';
 
 const API_URL_REGISTER = `${API_BASE}/register`;
-const API_URL_LOGIN = `${API_BASE}/login`;
+const API_URL_LOGIN = `/api/auth/login`;
 const API_URL_VALIDATE = `${API_BASE}/validatecode`;
 
 // Tipos de datos

@@ -1,59 +1,45 @@
-const sql = require("mssql")
+// db.js
+const { Pool } = require("pg")
 
-class SQLServer {
+class PostgreSQL {
   constructor() {
-    // Configuración de la conexión a SQL Server
-    this.sqlConfig = {
+    // Configuración de la conexión a PostgreSQL
+    this.pool = new Pool({
       user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      server: process.env.DB_SERVER,
+      host: process.env.DB_SERVER,
       database: process.env.DB_DATABASE,
-      port: 1433,
-      options: {
-        encrypt: false, // para azure
-        trustServerCertificate: true // para el modo desarrollo
+      password: process.env.DB_PASSWORD,
+      port: 5432,
+      ssl: {
+        rejectUnauthorized: false // útil en desarrollo; cambiar según entorno
       }
-    }
+    })
   }
 
-  async getQuery(query) {
+  async getQuery(queryText, params = []) {
     try {
-      // Conexión a SQL Server
-      let pool = await sql.connect(this.sqlConfig)
-
-      // Ejecución de la consulta
-      const result = await pool.request().query(`${query}`)
-      // Cierre de la conexión
-      await pool.close()
+      const result = await this.pool.query(queryText, params)
       return result
     } catch (err) {
-      console.log(err)
+      console.error("Error en getQuery:", err)
+      throw err
     }
   }
 
-  async executeStoredProcedure(procedureName, params) {
+  async executeStoredProcedure(procedureName, params = []) {
     try {
-      await sql.connect(this.sqlConfig)
+      // Construimos el llamado al procedimiento: CALL my_proc($1, $2, ...)
+      const placeholders = params.map((_, i) => `$${i + 1}`).join(", ")
+      const queryText = `CALL ${procedureName}(${placeholders})`
 
-      const request = new sql.Request()
-
-      if (params) {
-        Object.keys(params).forEach((key) => {
-          request.input(key, params[key])
-        })
-      }
-
-      const result = await request.execute(procedureName)
-
+      const result = await this.pool.query(queryText, params)
       return result
-    } catch (error) {
-      console.error(error)
-      throw error
-    } finally {
-      sql.close()
+    } catch (err) {
+      console.error("Error en executeStoredProcedure:", err)
+      throw err
     }
   }
 }
 
-const db = new SQLServer()
-export default db
+const db = new PostgreSQL()
+module.exports = db

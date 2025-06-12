@@ -4,6 +4,9 @@ import { getAuthorizationHeaderReset } from "../utils/getAuthorizationHeader"
  
 
 export class AuthService {
+  static login(userData: { username: string; password: string }) {
+    throw new Error('Method not implemented.')
+  }
   sign_up = async (authData: any) => {
     try {
       const signupResponse = await fetch("/api/auth/sign_up", {
@@ -24,7 +27,7 @@ export class AuthService {
 
   login = async (loginData: any) => {
     try {
-      const loginResponse = await fetch("/api/auth/signin", {
+      const loginResponse = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData)
